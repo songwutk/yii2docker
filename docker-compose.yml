@@ -3,7 +3,7 @@ services:
 
   db:
     image: mariadb:10.1
-    container_name: lemp_mariadb
+    container_name: mariadb
     restart: always
     volumes:
       - ./mysql/initdb/:/docker-entrypoint-initdb.d
@@ -20,7 +20,7 @@ services:
 
   php:
     build: ./php
-    container_name: lemp_php-fpm
+    container_name: php-fpm
     restart: always
     volumes:
       - ./www/:/var/www/html
@@ -32,7 +32,7 @@ services:
 
   nginx:
     image: nginx:stable-alpine
-    container_name: lemp_nginx
+    container_name: nginx
     restart: always
     volumes:
       - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
@@ -45,13 +45,13 @@ services:
 
   memcached:
     image: memcached:1.4.31-alpine
-    container_name: lemp_memcached
+    container_name: memcached
     ports:
       - "11211:11211"
 
   pma:
     image: phpmyadmin/phpmyadmin
-    container_name: lemp_phpmyadmin
+    container_name: phpmyadmin
     restart: always
     ports:
       - "8000:80"
