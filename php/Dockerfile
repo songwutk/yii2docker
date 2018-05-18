@@ -1,4 +1,4 @@
-FROM php:7.1.0-fpm-alpine
+FROM php:7.2.5-fpm-alpine3.7
 
 MAINTAINER Sathit Seethaphon <dixonsatit@gmail.com>
 
