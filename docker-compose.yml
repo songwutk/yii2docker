@@ -44,7 +44,7 @@ services:
       - 80:80
 
   memcached:
-    image: memcached:lastest
+    image: memcached:latest
     container_name: memcached
     ports:
       - "11211:11211"
